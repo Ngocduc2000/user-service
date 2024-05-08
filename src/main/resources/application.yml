@@ -1,0 +1,17 @@
+#spring.application.name=user-service
+
+
+
+spring:
+  application:
+    name: user-service
+  config:
+    import: "optional:configserver:http://localhost:8083"
+  datasource:
+    url: "jdbc:mysql://localhost:3306/user_service"
+    username: root
+    password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
