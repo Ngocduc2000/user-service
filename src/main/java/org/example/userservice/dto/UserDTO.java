@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class UserDTO extends GeneralDTO{
-    String userName;
+    String username;
     String password;
     String firstName;
     LocalDate dob;
