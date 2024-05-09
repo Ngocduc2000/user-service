@@ -5,8 +5,10 @@
 spring:
   application:
     name: user-service
+#port chay cac business service config trong file application.yml trong config server
   config:
     import: "optional:configserver:http://localhost:8083"
+#cau hinh ket noi database MySQL
   datasource:
     url: "jdbc:mysql://localhost:3306/user_service"
     username: root
@@ -15,3 +17,5 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+    generate-ddl: true
+
