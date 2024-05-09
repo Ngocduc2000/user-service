@@ -20,7 +20,7 @@ import java.time.LocalDate;
 @Table(name = "user")
 public class User extends AbstractClassDate {
     @Column(name = "user_name")
-    String userName;
+    String username;
     @Column(name = "password")
     String password;
     @Column(name = "first_name")
