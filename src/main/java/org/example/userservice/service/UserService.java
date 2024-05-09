@@ -11,6 +11,7 @@ import org.example.userservice.repository.UserRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
@@ -18,9 +19,10 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class UserService {
 
-    private final UserMapper userMapper;
+    UserMapper userMapper;
     UserRepository userRepository;
 
+    @Transactional
     public User createUser(UserDTO userDTO) {
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(10);
         userDTO.setPassword(passwordEncoder.encode(userDTO.getPassword()));
